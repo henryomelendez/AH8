@@ -14,10 +14,14 @@ class ECSource {
   public static <T> T getNodeValue(Node<T> head, int index) {
     // todo - note the return type, but don't overthink it
     Node<T> curr = head;
-    for(int i = 0; i < index; i++){
-      curr = curr.next;
-    }
-
+    int i = 0;
+   while (curr != null && i < index){
+     curr = curr.next;
+     i++;
+   }
+   if(curr == null){
+      return  null;
+   }
     return curr.val;
   }
   
@@ -43,5 +47,18 @@ class ECSource {
 // banana -> mango -> kiwi
 
     System.out.println(ECSource.getNodeValue(node1, 0)); // "banana"
+
+    Node<String> a = new Node<>("a");
+    Node<String> b = new Node<>("b");
+    Node<String> c = new Node<>("c");
+    Node<String> d = new Node<>("d");
+
+    a.next = b;
+    b.next = c;
+    c.next = d;
+
+// a -> b -> c -> d
+
+    System.out.println(ECSource.getNodeValue(a, 7)); // null
   }
 }

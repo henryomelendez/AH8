@@ -34,11 +34,9 @@ class Node<T> {
         // a -> b -> c -> d
 
         System.out.println(Source.linkedListFind(a, "c"));
-        Node<Integer> node1 = new Node<>(42);
-
-// 42
-
+        Node<Integer> node1 = new Node<>(42);// 42
         System.out.println( Source.linkedListFind(node1, 100)); // false;
+
         
     }
 
